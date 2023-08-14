@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Slab&family=Source+Sans+3:wght@200;300;400;500;600;700;800;900&display=swap');
+        :root {
+        --pds-ui-element--button--border-width: 1px;
+        --pds-ui-element--button--font-weight: 400;
+        --pds-ui-element--subtle-button--bg-color-on-light: rgba(0, 0, 0, 0.07);
+        --pds-ui-element--subtle-button--bg-color-on-dark: rgba(255, 255, 255, 0.07);
+
+        --pds-ui-element--button-md--border-radius: 3px;
+
+        --pds-ui-element--button-md--height: 32px;
+
+        --pds-ui-element--button-md--padding-x-regular: 12px;
+ 
+
+
+        --pds-ui-element--button-md--font-size: 15px;
+
+
+        --pds-alias--text-color--neutral-base-on-light: #2D2D2D;
+        --pds-alias--text-color--neutral-base-on-dark: #E9E9E9;
+
+        --pds-alias--icon-color--neutral-base-on-light: #2D2D2D;
+        --pds-alias--icon-color--neutral-base-on-dark: #E9E9E9;
+
+        --pds-alias--border-color--neutral-base-transparent-on-light: rgba(0, 0, 0, 0.25);
+        --pds-alias--border-color--neutral-base-transparent-on-dark: rgba(255, 255, 255, 0.25);
+        --pds-alias--border-color--neutral-base-on-light: #2D2D2D;
+
+        --pds-alias--bg-color--neutral-base-on-light: #2D2D2D;
+        --pds-alias--bg-color--neutral-base-on-dark: #6C6C6C;
+
+        --pds-text-type--interface--font-family: 'Source Sans 3', sans-serif;
+        --pds-text-type--interface--letter-spacing: 2%;
+    }
+
+    .pds-button {
+        display: inline-flex;
+        align-items: center;
+        outline: 0;
+        cursor: pointer;
+        text-align: center;
+        min-width: 36px; /* Adjust this as needed */
+        border: var(--pds-ui-element--button--border-width);
+        font-family: var(--pds-text-type--interface--font-family);
+        font-weight: var(--pds-ui-element--button--font-weight);
+        letter-spacing: var(--pds-text-type--interface--letter-spacing);
+        line-height: var(--pds-text-type--interface-600--line-height);
+        background-color: transparent;
+        margin-right: 16px;
+    }
+  
+
+
+    .icon {
+            position: relative; 
+            margin-right: 4px;
+            width: 16px;
+            height: 16px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="16" height="16"><path d="M8,.952C4.141,.952,1,4.093,1,7.952c.352,9.274,13.649,9.271,14,0,0-3.859-3.141-7-7-7Zm2.117,5.448c1.108-.036,2.339,.012,3.723,.195,.226,.921,.209,1.965-.042,2.876-.641-1.131-1.806-2.562-3.576-2.601-.034-.158-.067-.316-.105-.47Zm3.38-.846c-1.345-.155-2.563-.199-3.655-.154-.071-.234-.144-.462-.22-.684,.958-.203,1.751-.656,2.177-1.404,.73,.599,1.314,1.366,1.698,2.242Zm-5.276-1.719c-1.155,.039-2.822-.577-3.798-.688,.831-.621,1.825-1.034,2.908-1.155,.259,.471,.575,1.093,.891,1.843Zm.232-1.86c.907,.068,1.757,.336,2.508,.764-.276,.55-.898,.888-1.691,1.027-.278-.692-.561-1.296-.816-1.791ZM3.44,4.063c.635-.121,3.899,.952,5.166,.773,.073,.206,.145,.417,.214,.635-3.744,.357-5.867,1.714-6.817,2.526-.018-1.495,.535-2.876,1.438-3.933Zm-1.306,5.144l.03,.024c.024-.029,1.968-2.331,6.938-2.77,.046,.181,.089,.365,.13,.553-1.504,.469-3.176,2.352-4.979,5.617-1.059-.85-1.824-2.049-2.118-3.424Zm2.948,3.984c1.589-2.887,3.134-4.731,4.332-5.187,.278,1.821,.252,3.84-.428,5.86-1.324,.244-2.78-.032-3.904-.673Zm5.035,.369c.547-1.97,.555-3.912,.289-5.675,1.505,.173,2.44,1.779,2.886,2.809l.05-.022c-.675,1.322-1.825,2.358-3.225,2.888Z" fill="%23currentColor"/></svg>');
+            background-repeat: no-repeat;
+            background-size: contain;
+        }
+
+
+
+    .text {
+        margin-left: 0px; 
+    }
+
+    
+    .pds-button--md {
+        padding: 0 var(--pds-ui-element--button-md--padding-x-regular);
+        height: var(--pds-ui-element--button-md--height);
+        border-radius: var(--pds-ui-element--button-md--border-radius);
+        font-size: var(--pds-ui-element--button-md--font-size);
+    }
+
+
+    .pds-button--neutral-outline-on-light {
+        color: var(--pds-alias--text-color--neutral-base-on-light);
+        border: var(--pds-ui-element--button--border-width) solid;
+        border-color: var(--pds-alias--border-color--neutral-base-transparent-on-light);
+    }
+
+    .pds-button--neutral-outline-on-light .icon {
+            color: var(--pds-alias--icon-color--neutral-base-on-light);
+        }
+
+    .pds-button--neutral-outline-on-dark {
+        color: var(--pds-alias--text-color--neutral-base-on-dark);
+        border: var(--pds-ui-element--button--border-width) solid;
+        border-color: var(--pds-alias--border-color--neutral-base-transparent-on-dark);
+    }
+
+    .pds-button--neutral-outline-on-dark .icon {
+            color: var(--pds-alias--icon-color--neutral-base-on-dark);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            height: 100vh; /* This makes the body take up the full viewport height */
+        }
+
+        .left, .right {
+            flex: 1; /* This makes each half take up an equal amount of space */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .left {
+            background-color: #F4F4F4;
+        }
+
+        .right {
+            background-color: #131313;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 32px; /* Adjust this as needed */
+        }
+    </style>
+</head>
+<body>
+    <div class="left">
+        <div class="row">
+            <button class="pds-button pds-button--neutral-outline-on-light pds-button--md">
+                <span class="icon"></span>
+                <span class="text">Button</span>
+            </button> 
+        </div>
+    </div>
+
+
+        <!-- Add more rows as needed -->
+        
+        <div class="right">
+            <div class="row">
+                <button class="pds-button pds-button--neutral-outline-on-dark pds-button--md">
+                    <span class="icon"></span>
+                    <span class="text">Button</span>
+            </div>
+        </div>
+
+</body>
+</html>
+
+
