@@ -1,4 +1,4 @@
-# Oz.md (extended)
+This is the structure of user's life
 
 # PROFESSIONAL
 
