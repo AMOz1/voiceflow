@@ -1,49 +1,29 @@
-      :root {
-        --pds-ui-element--button--border-width: 1px;
-        --pds-ui-element--button--font-weight: 400;
-        --pds-ui-element--subtle-button--bg-color-on-light: rgba(0, 0, 0, 0.07);
-        --pds-ui-element--subtle-button--bg-color-on-dark: rgba(255, 255, 255, 0.07);
+@keyframes a {
+  to {
+    background-position: 0 -200%;
+  }
+}
 
-        --pds-ui-element--button-md--border-radius: 3px;
+:root {
+  --rainbow: linear-gradient(
+    rgba(255, 0, 0, 1) 0%,
+    rgba(255, 154, 0, 1) 10%,
+    rgba(208, 222, 33, 1) 20%,
+    rgba(79, 220, 74, 1) 30%,
+    rgba(63, 218, 216, 1) 40%,
+    rgba(47, 201, 226, 1) 50%,
+    rgba(28, 127, 238, 1) 60%,
+    rgba(95, 21, 242, 1) 70%,
+    rgba(186, 12, 248, 1) 80%,
+    rgba(251, 7, 217, 1) 90%,
+    rgba(255, 0, 0, 1) 100%
+  );
+}
 
-        --pds-ui-element--button-md--height: 32px;
-
-        --pds-ui-element--button-md--padding-x-regular: 12px;
- 
-
-
-        --pds-ui-element--button-md--font-size: 15px;
-
-
-        --pds-alias--text-color--neutral-base-on-light: #2D2D2D;
-        --pds-alias--text-color--neutral-base-on-dark: #E9E9E9;
-
-        --pds-alias--icon-color--neutral-base-on-light: #2D2D2D;
-        --pds-alias--icon-color--neutral-base-on-dark: #E9E9E9;
-
-        --pds-alias--border-color--neutral-base-transparent-on-light: rgba(0, 0, 0, 0.25);
-        --pds-alias--border-color--neutral-base-transparent-on-dark: rgba(255, 255, 255, 0.25);
-        --pds-alias--border-color--neutral-base-on-light: #2D2D2D;
-
-        --pds-alias--bg-color--neutral-base-on-light: #2D2D2D;
-        --pds-alias--bg-color--neutral-base-on-dark: #6C6C6C;
-
-        --pds-text-type--interface--font-family: 'Source Sans 3', sans-serif;
-        --pds-text-type--interface--letter-spacing: 2%;
-    }
-
-    .pds-button {
-        display: inline-flex;
-        align-items: center;
-        outline: 0;
-        cursor: pointer;
-        text-align: center;
-        min-width: 36px; /* Adjust this as needed */
-        border: var(--pds-ui-element--button--border-width);
-        font-family: var(--pds-text-type--interface--font-family);
-        font-weight: var(--pds-ui-element--button--font-weight);
-        letter-spacing: var(--pds-text-type--interface--letter-spacing);
-        line-height: var(--pds-text-type--interface-600--line-height);
-        background-color: transparent;
-        margin-right: 16px;
-    }
+.vfrc-header,
+.vfrc-launcher,
+.vfrc-footer .vfrc-button,
+.vfrc-user-response--row .vfrc-message {
+  background: var(--rainbow) 0 0/100% 200%;
+  animation: a 2s linear infinite !important;
+}
