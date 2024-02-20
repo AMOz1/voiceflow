@@ -1,6 +1,5 @@
 
 @charset "UTF-8";
-
 @keyframes a {
   to {
     background-position: 0 -200%;
@@ -22,6 +21,8 @@
     rgba(255, 0, 0, 1) 100%
   );
 }
+
+
 
 .vfrc-header,
 .vfrc-launcher,
