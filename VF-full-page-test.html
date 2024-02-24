@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Voiceflow Chat</title>
+  <style>
+    #voiceflow-chat {
+      width: 100vw;
+      height: 100vh;
+      margin: 0;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+<script type="text/javascript">
+    (function (d, t) {
+      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+      v.onload = function () {
+        window.voiceflow.chat.load({
+          verify: { projectID: '65aa6270a36bb0b79c9bba16' },
+          url: 'https://general-runtime.voiceflow.com/',
+          versionID: 'development',
+          assistant: {
+                        stylesheet: "https://link.voiceflow.fr/b53Sxx"
+                    }
+        }).then(() => {
+          setTimeout(() => {window.voiceflow.chat.open();}, 500)
+              });
+            };
+      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+    })(document, 'script');
+  </script>
+<div id="voiceflow-chat"></div>
+</body>
+</html>
