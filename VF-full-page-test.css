@@ -53,9 +53,14 @@ html, body {
     display: none !important;
 }
 
-.c-kedLSQ-eqSMDL-mode-overlay .c-gMpNkY {
-    max-width: 600px !important;
-}
+
+
+.vfrc-message--chat{
+    max-width: 800px !important;
+  }
+
+
+
 
 .c-bwlaNm-iNqOfR-mode-overlay .c-gMpNkY {
     max-width: 600px !important;
