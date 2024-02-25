@@ -48,17 +48,17 @@ html, body {
 
 }
 
-
-.c-iCDrnV .c-kIbiaN {
+/* Hide avatar, top left */
+.vfrc-avatar {
     display: none !important;
 }
 
-
-
+/* Assistant Message */
 .vfrc-message--chat{
     max-width: 600px !important;
   }
 
+/* User Message */
 .vfrc-message {
     max-width: 600px !important;
   }
