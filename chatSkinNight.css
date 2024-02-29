@@ -74,7 +74,7 @@ html, body {
     background-color: #000030 !important;
 }
 
-.vfrc-chat-input c-cNrVYs {
+.c-cNrVYs {
     background-color: rgba(255, 255, 255, 0.1) !important;
     border-color: rgba(255, 255, 255, 0.15) !important;
 }
@@ -89,5 +89,5 @@ html, body {
 }
 
 .c-jjMiVY {
-    font-family: Arial, Helvetica, sans-serif !important;
+    font-family: var(--fonts-default) !important;
 }
