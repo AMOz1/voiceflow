@@ -67,9 +67,20 @@ html, body {
 
 
 .vfrc-chat {
-background-color: #000030 !important;
+    background-color: #000030 !important;
 }
 
 .vfrc-header {
-background-color: #000030 !important;
+    background-color: #000030 !important;
+}
+
+.vfrc-chat-input {
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.vfrc-button {
+    color: rgba(255, 255, 255, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 99px !important;
 }
