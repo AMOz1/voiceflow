@@ -15,11 +15,7 @@ html, body {
 
 }
 
-.vfrc-widget--launcher {
 
-  display: none !important;
-
-}
 
 .vfrc-widget--chat {
   position: fixed !important;
