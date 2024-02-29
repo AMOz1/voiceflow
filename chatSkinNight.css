@@ -56,14 +56,15 @@ html, body {
 /* Assistant Message */
 .vfrc-message--chat{
     max-width: 600px !important;
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    color: rgba(255, 255, 255, 0.8) !important;
+    margin-top: 10px !important;
   }
 
 /* User Message */
 .vfrc-message {
     max-width: 600px !important;
-    background-color: rgba(255, 255, 255, 0.15) !important;
-    color: rgba(255, 255, 255, 0.8) !important;
-    margin-top: 10px !important;
+    background-color: #053AA8 !important;
   }
 
 
