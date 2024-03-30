@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
@@ -7,15 +8,11 @@ html, body {
 }
 
 .vfrc-widget {
-
   position: relative !important;
   width: 100%;
   height: 100%;
   inset: initial;
-
 }
-
-
 
 .vfrc-widget--chat {
   position: fixed !important;
@@ -28,29 +25,227 @@ html, body {
   border: none !important;
   max-width: none !important;
   max-height: none !important;
+  border-radius: unset;
 }
 
+.vfrc-widget--chat > * {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+}
 
+/* Position chat items to the center */
+.vfrc-widget--chat .vfrc-chat {
+  height: 100%;
+  position: fixed !important;
+  width: 100% !important;
+  right: 0 !important;
+  top: 0 !important;
+}
 
-.vfrc-footer {
+.vfrc-chat--dialog {
+  width: 100% !important;
+}
 
-  border-top: 2px solid var(--shadows-shadow4);
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-
+.vfrc-chat-input,
+.vfrc-system-response,
+.vfrc-user-response,
+.vfrc-system-response--actions {
+  width: 808px !important;
+  margin: auto !important;
 }
 
 /* Hide avatar, top left */
-.vfrc-avatar {
-    display: none !important;
+
+.vfrc-footer {
+  border-top: none;
+  box-shadow: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-bottom: 20px;
 }
 
 /* Assistant Message */
-.vfrc-message--chat{
-    max-width: 600px !important;
-  }
+.vfrc-message--chat {
+  max-width: 600px !important;
+  background-color: rgba(0, 0, 0, 0.05) !important;
+  color: #434343 !important;
+  margin-top: 15px !important;
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 17px;
+  line-height:140%
+}
+
+
+.vfrc-system-response--actions {
+  margin-top: 10px !important;
+}
 
 /* User Message */
 .vfrc-message {
-    max-width: 600px !important;
-  }
+  max-width: 650px !important;
+  padding:20px !important;
+
+}
+.vfrc-system-response .vfrc-message {
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+.vfrc-user-response .vfrc-message {
+  background-color: rgba(255, 255, 255, 1) !important;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+.vfrc-user-response--row {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+header .vfrc-avatar {
+  display: none !important;
+}
+
+.vfrc-chat {
+  background-color: rgba(244, 244, 244, 1) !important;
+}
+
+.vfrc-chat--dialog c-Mmsau {
+  background-color: rgba(244, 244, 244, 1) !important;
+}
+
+.vfrc-chat--dialog {
+  background-color: rgba(244, 244, 244, 1) !important;
+  --scrollbar-color-track: #0000ff;
+  --scrollbar-color-thumb: #ff69b4;
+}
+
+.c-Mmsau {
+  background-color: rgba(244, 244, 244, 1) !important;
+}
+
+.vfrc-header {
+  background-color: rgba(244, 244, 244, 1) !important;
+  box-shadow: none !important;
+  display: none !important;
+}
+
+.c-fYYkXN {
+  background-color: white !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  color: rgba(45, 45, 45, 1) !important;
+}
+
+.c-iSWgdS {
+  background-color: white !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  box-shadow: none !important;
+}
+
+.vfrc-button {
+  color: rgba(31, 88, 207, 1) !important;
+  border: 1px solid rgba(122, 160, 253, 1) !important;
+  border-radius: 99px !important;
+  background-color: rgba(244, 244, 244, 1) !important;
+  font-size: 16px !important;
+}
+
+.vfrc-button:hover {
+  background-color: white !important;
+}
+
+.c-jjMiVY {
+  font-family: "Source Sans 3", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+
+
+/* Scrollbar  */
+
+::-webkit-scrollbar {
+  opacity: 0 !important;
+  width: 8px !important;
+  position: absolute !important;
+  right: 50px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.4
+  ) !important; /* color of the scroll thumb */
+  border-radius: 99px !important; /* roundness of the scroll thumb */
+  right: 50px;
+}
+
+em { 
+  font-style: italic;
+  color: rgba(108, 108, 108, 1);
+}
+
+strong { 
+  font-weight:600;
+  color: black;
+}
+
+h2 {
+  font-weight: 600;
+  color:black
+}
+
+h3 {
+  font-weight: 600;
+  color:black
+}
+
+h4 {
+  font-weight: 600;
+  color:black
+}
+
+h5 {
+  font-weight: 600;
+  color:black
+}
+
+h6 {
+  font-weight: 600;
+  color:black
+}
+
+
+p {
+font-size: 17px;
+color: #434343;
+font-weight: 400;
+line-height:140%;
+
+}
+
+.vfrc-assistant-info {
+  margin-top: 72px;
+}
+
+.vfrc-assistant-info--description {
+  font-family: "Source Sans 3", sans-serif;
+  font-size: 17px;
+  max-width: 600px;
+  line-height: 25px;
+}
+
+.vfrc-assistant-info--title {
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 700;
+}
+.c-fYYkXN {
+  height: 300px !important;
+  max-height: 300px !important;
+}
