@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <title>Voiceflow Chat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
   <style>
     #voiceflow-chat {
       width: 100vw;
@@ -17,28 +20,37 @@
   </style>
 </head>
 <body>
-<script type="text/javascript">
-    (function (d, t) {
-      var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
-      v.onload = function () {
-        window.voiceflow.chat.load({
-          verify: { projectID: '65d080e9181f78db9b9e510f' },
-          url: 'https://general-runtime.voiceflow.com/',
-          versionID: 'development',
-          launch: { event: { type: "launch", payload: { username: "Ozman" } } },
+    <script type="text/javascript">
+        const chat = document.getElementById("voiceflow-chat");
+        (function(d, t) {
+            var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            v.onload = function() {
+              window.voiceflow.chat.load({
+                verify: { projectID: '65f3f2931edfb086494cc0d5' },
+                url: 'https://general-runtime.voiceflow.com',
+                versionID: 'production',
+                render: {
+	mode: 'embedded',
+	target: document.chat,
+},
+autostart: false,
+
+launch: { event: { type: "launch", payload: { username: "Ozman" } } },
           user: {
             name:  "Ozman"
           },
           assistant: {
-                        stylesheet: "https://amoz1.github.io/voiceflow/chatSkinDayx.css"
+                        stylesheet: href="chatSkinDay.css"
                     }
         }).then(() => {
           setTimeout(() => {window.voiceflow.chat.open();}, 500)
+        
               });
-            };
-      v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
-    })(document, 'script');
-  </script>
+            }
+            v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+      </script>
+      
 <div id="voiceflow-chat"></div>
 </body>
 </html>
