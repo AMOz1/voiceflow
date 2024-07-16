@@ -2,12 +2,21 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Voiceflow Chat</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
   <style>
-
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #voiceflow-chat {
+      height: 100%;
+      width: 100%;
+    }
   </style>
 </head>
 <body>
@@ -24,7 +33,7 @@
         v.src = "https://cdn.voiceflow.com/widget/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
     })(document, 'script');
   </script>
-      
+
 <div id="voiceflow-chat"></div>
 </body>
 </html>
