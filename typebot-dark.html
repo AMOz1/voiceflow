@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SPORTY</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    
+  </head>
+<body>
+
+  <script type="module">
+    import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js';
+    Typebot.initStandard({ typebot: "dark-mode-w2x4k9r" });
+</script>
+<typebot-standard style="height: 100vh;"></typebot-standard>
+
+<script type="module">
+  import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js';
+  Typebot.initStandard({ typebot: "dark-mode-w2x4k9r" });
+</script>
+<typebot-standard style="height: 100vh;"></typebot-standard>
+
+<script>
+  function hideShadowDOMBadge() {
+      // Function to inject style into shadow root
+      function injectStyle(shadowRoot) {
+          if (shadowRoot) {
+              const style = document.createElement('style');
+              style.textContent = `
+                  #lite-badge {
+                      display: none !important;
+                      opacity: 0 !important;
+                      visibility: hidden !important;
+                      pointer-events: none !important;
+                  }
+              `;
+              shadowRoot.appendChild(style);
+          }
+      }
+
+      // Function to find and modify shadow roots
+      function findAndModifyShadowRoots(node) {
+          // Check if the node itself has a shadow root
+          if (node.shadowRoot) {
+              injectStyle(node.shadowRoot);
+          }
+
+          // Check child elements recursively
+          node.childNodes.forEach(child => {
+              if (child.nodeType === Node.ELEMENT_NODE) {
+                  findAndModifyShadowRoots(child);
+              }
+          });
+      }
+
+      // Start the search from the body
+      findAndModifyShadowRoots(document.body);
+
+      // Set up a MutationObserver to watch for new elements
+      const observer = new MutationObserver(mutations => {
+          mutations.forEach(mutation => {
+              if (mutation.type === 'childList') {
+                  mutation.addedNodes.forEach(node => {
+                      if (node.nodeType === Node.ELEMENT_NODE) {
+                          findAndModifyShadowRoots(node);
+                      }
+                  });
+              }
+          });
+      });
+
+      // Start observing the document with the configured parameters
+      observer.observe(document.body, { childList: true, subtree: true });
+  }
+
+  // Run the function after a short delay and periodically
+  setTimeout(hideShadowDOMBadge, 1000);
+  setInterval(hideShadowDOMBadge, 2000);
+</script>
+
+</body>
+</html>
