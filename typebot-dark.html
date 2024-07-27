@@ -29,8 +29,8 @@
             position: fixed;
             top: 16px;
             right: 16px;
-            width: 32px;
-            height: 32px;
+            width: 40px;
+            height: 40px;
             background-color: #000000;
             border: none;
             border-radius: 50%;
@@ -132,10 +132,15 @@
 
   <script>
     function resetChatbotSession() {
-        // Clear session storage
+        // Clear local storage
         localStorage.clear();
 
-        // Reload the iframe content
+        // Clear all cookies
+        document.cookie.split(";").forEach(function(c) {
+            document.cookie = c.trim().split("=")[0] + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+        });
+
+        // Reload the page
         location.reload();
     }
   </script>
