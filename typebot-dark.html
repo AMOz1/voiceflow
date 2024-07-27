@@ -18,15 +18,19 @@
             padding: 0;
             overflow: hidden; /* Disables scrollbars */
             height: 100%; /* Forces the content to fit the iframe height */
-            background-color: #000000;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
         }
 
         #reloadButton {
             position: fixed;
             top: 16px;
             right: 16px;
-            width: 40px;
-            height: 40px;
+            width: 32px;
+            height: 32px;
             background-color: #000000;
             border: none;
             border-radius: 50%;
@@ -131,13 +135,15 @@
         // Clear local storage
         localStorage.clear();
 
-        // Clear all cookies
-        document.cookie.split(";").forEach(function(c) {
-            document.cookie = c.trim().split("=")[0] + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
-        });
-
-        // Reload the page
-        location.reload();
+        // Open a new tab with the same URL and close the current tab
+        const newTab = window.open(window.location.href, '_blank');
+        if (newTab) {
+            newTab.focus();
+            window.close();
+        } else {
+            // If the browser blocks the new tab, fall back to reloading the page
+            location.reload();
+        }
     }
   </script>
 
