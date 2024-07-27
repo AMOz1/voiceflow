@@ -132,18 +132,11 @@
 
   <script>
     function resetChatbotSession() {
-        // Clear local storage
+        // Clear session storage
         localStorage.clear();
 
-        // Open a new tab with the same URL and close the current tab
-        const newTab = window.open(window.location.href, '_blank');
-        if (newTab) {
-            newTab.focus();
-            window.close();
-        } else {
-            // If the browser blocks the new tab, fall back to reloading the page
-            location.reload();
-        }
+        // Reload the iframe content
+        location.reload();
     }
   </script>
 
