@@ -8,7 +8,15 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
     <style>
-
+        body, html {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden; /* Prevents horizontal scroll */
+            overflow-y: auto; /* Allows vertical scroll */
+            width: 100%;
+            height: 100%;
+            touch-action: pan-y; /* Prevents horizontal scrolling on touch devices */
+        }
 
         .button-container {
             position: fixed;
@@ -42,9 +50,11 @@
         typebot-standard {
             width: 100%;
             height: 100vh;
+            max-width: 100%; /* Ensure it does not exceed the viewport width */
             position: absolute;
             top: 0;
             left: 0;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
         }
 
         .content {
@@ -70,13 +80,19 @@
             font-weight: 600;
             color: #00003C;
         }
+
+        /* Custom CSS for Typebot */
+        typebot-standard {
+            --custom-margin: 0px; /* Adjust as needed */
+            --custom-max-width: 100%; /* Ensure it does not exceed the viewport width */
+        }
     </style>
 </head>
 <body>
 
     <script type="module">
         import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js';
-        Typebot.initStandard({ typebot: "my-typebot-plrttwc" });
+        Typebot.initStandard({ typebot: "dark-mode-w2x4k9r" });
     </script>
     <typebot-standard></typebot-standard>
 
