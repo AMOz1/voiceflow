@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>SPORTY</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+            position: fixed;
+        }
+
+        .content-wrapper {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow-y: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .button-container {
+            position: fixed;
+            bottom: 16px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            z-index: 1000; /* Ensure the button container is on top */
+        }
+
+        #reloadButton {
+            width: 40px;
+            height: 40px;
+            background-color: #000000;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #reloadButton:hover {
+            cursor: pointer;
+        }
+
+        #reloadButton svg {
+            width: 100%;
+            height: 100%;
+            fill: white;
+        }
+
+        typebot-standard {
+            width: 100%;
+            height: 100vh;
+            max-width: 100%; /* Ensure it does not exceed the viewport width */
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-sizing: border-box; /* Include padding and border in the element's total width and height */
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 20px 20px;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            color: #00003C;
+        }
+
+        p {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.8rem;
+            color: #2D2D2D;
+        }
+
+        strong {
+            font-weight: 600;
+            color: #00003C;
+        }
+
+        /* Custom CSS for Typebot */
+        typebot-standard {
+            --custom-margin: 0px; /* Adjust as needed */
+            --custom-max-width: 100%; /* Ensure it does not exceed the viewport width */
+        }
+    </style>
+  </head>
+<body>
+
+    <div class="content-wrapper">
+        <script type="module">
+            import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0.3/dist/web.js';
+            Typebot.initStandard({ typebot: "oz-general-k3tdvkf" });
+          </script>
+          <typebot-standard></typebot-standard>
+        
+          <script>
+            function hideShadowDOMBadge() {
+              // Function to inject style into shadow root
+              function injectStyle(shadowRoot) {
+                  if (shadowRoot) {
+                      const style = document.createElement('style');
+                      style.textContent = `
+                          #lite-badge {
+                              display: none !important;
+                              opacity: 0 !important;
+                              visibility: hidden !important;
+                              pointer-events: none !important;
+                          }
+                      `;
+                      shadowRoot.appendChild(style);
+                  }
+              }
+        
+              // Function to find and modify shadow roots
+              function findAndModifyShadowRoots(node) {
+                  // Check if the node itself has a shadow root
+                  if (node.shadowRoot) {
+                      injectStyle(node.shadowRoot);
+                  }
+        
+                  // Check child elements recursively
+                  node.childNodes.forEach(child => {
+                      if (child.nodeType === Node.ELEMENT_NODE) {
+                          findAndModifyShadowRoots(child);
+                      }
+                  });
+              }
+        
+              // Start the search from the body
+              findAndModifyShadowRoots(document.body);
+        
+              // Set up a MutationObserver to watch for new elements
+              const observer = new MutationObserver(mutations => {
+                  mutations.forEach(mutation => {
+                      if (mutation.type === 'childList') {
+                          mutation.addedNodes.forEach(node => {
+                              if (node.nodeType === Node.ELEMENT_NODE) {
+                                  findAndModifyShadowRoots(node);
+                              }
+                          });
+                      }
+                  });
+              });
+        
+              // Start observing the document with the configured parameters
+              observer.observe(document.body, { childList: true, subtree: true });
+          }
+        
+          // Run the function after a short delay and periodically
+          setTimeout(hideShadowDOMBadge, 100);
+          setInterval(hideShadowDOMBadge, 2000);
+          </script>
+        
+        <div class="button-container">
+            <button id="reloadButton" onclick="resetChatbotSession()">
+                <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="15.5" cy="15.5" r="15.5" fill="black"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M15.9456 2.81836L10.5272 8.23672L15.9456 13.6551V9.43345C19.0318 9.89055 21.3999 12.5508 21.3999 15.7641C21.3999 19.2987 18.5345 22.1641 14.9999 22.1641C11.4653 22.1641 8.5999 19.2987 8.5999 15.7641H5.3999C5.3999 21.066 9.69797 25.3641 14.9999 25.3641C20.3018 25.3641 24.5999 21.066 24.5999 15.7641C24.5999 10.7812 20.8036 6.68508 15.9456 6.21005V2.81836Z" fill="#484848"/>
+                </svg>
+            </button>
+        </div>
+        
+          <script>
+            function resetChatbotSession() {
+                // Clear local storage
+                sessionStorage.clear();
+        
+                // Clear all cookies
+                document.cookie.split(";").forEach(function(c) {
+                    document.cookie = c.trim().split("=")[0] + "=;expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/";
+                });
+        
+                // Reload the page
+                location.reload();
+            }
+          </script>
+    </div>
+
+
+    <script>
+        document.addEventListener('touchmove', function(e) {
+            e.preventDefault();
+        }, { passive: false });
+    
+        document.querySelector('.content-wrapper').addEventListener('touchmove', function(e) {
+            e.stopPropagation();
+        }, { passive: false });
+    </script>
+  
+
+</body>
+</html>
