@@ -48,6 +48,19 @@
             height: 100%;
             fill: white;
         }
+
+        /* CSS to prevent text from resizing in landscape view */
+        @media (orientation: landscape) {
+            html, body {
+                font-size: 1em; /* Adjust this value to control the font size in landscape */
+            }
+        }
+
+        @media (orientation: portrait) {
+            html, body {
+                font-size: 1em; /* Adjust this value to control the font size in portrait */
+            }
+        }
     </style>
 </head>
 <body>
