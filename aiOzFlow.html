@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+  <style>
+      html, body {
+          margin: 0;
+          padding: 0;
+          width: 100%;
+          height: 100%;
+          overflow-x: hidden;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
+          position: fixed;
+      }
+      
+      .chatbot-input {
+          border-radius: 99px !important;
+      }
+  </style>
+</head>
+  <body>
+	<script src="index.js"></script>
+
+
+<flowise-fullchatbot></flowise-fullchatbot>
+<body style="margin: 0">
+<script type="module">
+    import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+    Chatbot.initFull({
+          chatflowid: "d1178a44-3278-4e45-b9ea-924f3e4f7eb2",
+          apiHost: "https://ozflowise.onrender.com",
+        
+        chatflowConfig: {                
+          sessionId: "ozGeneral",          
+          },
+theme: {
+       // Header actually
+      button: {
+        backgroundColor: '#181818',
+        right: 20,
+        bottom: 20,
+        size: 60, // small | medium | large | number
+        dragAndDrop: true,
+      // refresh icon
+        iconColor: '#8A8A8A',
+        customIconSrc: 'https://ozvoiceflow-o-skondric-f12d294a650d922b4d1934c360adc2b1026e0fbd.pages.sportradar.ag/transparentSquare.png',
+      },
+      chatWindow: {
+        showTitle: true,
+        title: '',
+        titleAvatarSrc: 'https://ozvoiceflow-o-skondric-f12d294a650d922b4d1934c360adc2b1026e0fbd.pages.sportradar.ag/transparentSquare.png',
+        welcomeMessage: 'Hi, how can I assist you today?',
+        errorMessage: 'There is an error. Hope everybody is ok',
+        backgroundColor: '#181818',
+        fontSize: 16,
+        botMessage: {
+          backgroundColor: '#181818',
+          textColor: '#D3D3D3',
+          showAvatar: true,
+          avatarSrc: 'https://cm4-production-assets.s3.amazonaws.com/1709815609116-sr-logo-chat2.png',
+        },
+        userMessage: {
+          backgroundColor: '#282828',
+          textColor: '#D3D3D3',
+          showAvatar: false,
+          avatarSrc: 'https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png',
+        },
+        textInput: {
+          placeholder: 'Your message...',
+          backgroundColor: '#282828',
+          textColor: '#D3D3D3',
+          sendButtonColor: '#8A8A8A',
+        },
+        feedback: {
+          color: '#8A8A8A',
+        },
+        footer: {
+          textColor: '#303235',
+          text: 'Powered by',
+          company: 'Sportradar',
+          companyLink: 'https://sportradar.com/',
+        },
+      },
+    },
+  });
+</script>
+
+<script>
+  function hideShadowDOMBadge() {
+    // Function to inject style into shadow root
+    function injectStyle(shadowRoot) {
+        if (shadowRoot) {
+            const style = document.createElement('style');
+            style.textContent = `
+            .chatbot-input {
+              border-radius: 99px !important;
+              border-style: none !important;
+            }
+
+            .chatbot-host-bubble {
+              font-family: 'Source Sans 3', sans-serif !important;
+              font-size: 17px !important;
+              font-weight: 400 !important;
+              line-height: 1.5rem !important;
+              padding-left: 8px !important;
+              -webkit-font-smoothing: antialiased;
+              text-rendering: optimizeLegibility;
+            }
+
+            .chatbot-host-bubble b, 
+            .chatbot-host-bubble strong {
+            color: #B0C4FB !important;
+            font-weight: 600 !important;
+            }
+
+            .chatbot-guest-bubble {
+              font-family: 'Source Sans 3', sans-serif !important;
+              font-size: 17px !important;
+              font-weight: 400 !important;
+              padding-left: 16px !important;
+              line-height: 1.5rem !important;
+              padding-left: 8px !important;
+              -webkit-font-smoothing: antialiased;
+              text-rendering: optimizeLegibility;
+            }
+
+            .chatbot-guest-bubble b, 
+            .chatbot-guest-bubble strong {
+            color: #B0C4FB !important;
+            font-weight: 600 !important;
+            }
+
+            .text-input {
+              font-family: 'Source Sans 3', sans-serif !important;
+              font-size: 17px !important;
+              font-weight: 400 !important;
+              -webkit-font-smoothing: antialiased;
+              text-rendering: optimizeLegibility;
+            }
+
+            .border-0 {
+              border: 1px solid #000000 !important;
+           }
+
+           .border-solid {
+            border: 1px solid #000000 !important;
+           }
+
+           .border-blueGray-200 {
+            border: 1px solid #000000 !important;
+           }
+
+           .flex.items-center.justify-between.p-5.border-b.border-solid.border-blueGray-200.rounded-t {
+            border: 1px solid #000000 !important;
+            }
+
+            .prose :where(code):not(:where([class~=not-prose],[class~=not-prose] *)) {
+              color: #B0C4FB;
+            }
+
+          .rounded-t {
+            border: 1px solid #000000 !important;
+          }
+
+          .block.p-2\.5.rounded-lg.border.focus\:ring-blue-500.focus\:border-blue-500.bg-transparent.flex-1.w-full.feedback-k-input.disabled\:opacity-50.disabled\:cursor-not-allowed.disabled\:brightness-100.font-normal {
+            border: 0px solid rgb(238, 238, 238) !important;
+            background-color: #282828 !important;
+
+            }
+
+
+}
+
+
+
+            `;
+            shadowRoot.appendChild(style);
+        }
+    }
+
+    // Function to find and modify shadow roots
+    function findAndModifyShadowRoots(node) {
+        // Check if the node itself has a shadow root
+        if (node.shadowRoot) {
+            injectStyle(node.shadowRoot);
+        }
+
+        // Check child elements recursively
+        node.childNodes.forEach(child => {
+            if (child.nodeType === Node.ELEMENT_NODE) {
+                findAndModifyShadowRoots(child);
+            }
+        });
+    }
+
+    // Start the search from the body
+    findAndModifyShadowRoots(document.body);
+
+    // Set up a MutationObserver to watch for new elements
+    const observer = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+            if (mutation.type === 'childList') {
+                mutation.addedNodes.forEach(node => {
+                    if (node.nodeType === Node.ELEMENT_NODE) {
+                        findAndModifyShadowRoots(node);
+                    }
+                });
+            }
+        });
+    });
+
+    // Start observing the document with the configured parameters
+    observer.observe(document.body, { childList: true, subtree: true });
+}
+
+// Run the function after a short delay and periodically
+setTimeout(hideShadowDOMBadge, 100);
+// setInterval(hideShadowDOMBadge, 2000);  uncomment this for periodic run
+
+</script>
+
+
+  </body>
+</html>
