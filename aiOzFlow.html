@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -83,9 +82,9 @@
             width: 100%;
             height: 48px;
             background-color: rgba(255, 255, 255, 0);
-            border: 1px solid #343739;
+            border: 1px solid #4A4A4A;
             border-radius: 6px;
-            color: #999999;
+            color: #E9E9E9;
             cursor: pointer;
             text-align: center;
             transition: background-color 0.3s ease;
@@ -93,11 +92,11 @@
             text-rendering: optimizeLegibility;
         }
         .tab-button.active {
-            background-color: rgba(255, 255, 255, 0.06);
-            color: #999999;
+            background-color: rgba(255, 255, 255, 0.15);
+            color: #E9E9E9;
         }
         .tab-button:active, .action-button:active {
-            filter: brightness(2.2);
+            filter: brightness(2.6);
         }
         .action-button {
             font-family: 'Source Sans 3', sans-serif ;
@@ -134,9 +133,9 @@
         <div id="actionButtons1" class="action-buttons active">
             <a href="#" class="action-button">ozGeneral</a>
             <a href="#" class="action-button">ozProfessional</a>
-            <a href="#" class="action-button">ozTasks</a>
-            <a href="#" class="action-button">ozRemember</a>
+            <a href="#" class="action-button">ozToDo</a>
             <a href="#" class="action-button">ozFacts</a>
+            <a href="#" class="action-button">Null</a>
         </div>
         <div id="actionButtons2" class="action-buttons">
             <a href="#" class="action-button">Sonnet 3.5</a>
@@ -150,14 +149,14 @@
             <a href="#" class="action-button">( 15 )</a>
             <a href="#" class="action-button">( 30 )</a>
             <a href="#" class="action-button">( 70 )</a>
-            <a href="#" class="action-button">( 99 )</a>
+            <a href="#" class="action-button">( 90 )</a>
         </div>
         <div id="actionButtons4" class="action-buttons">
-          <a href="#" class="action-button">Oz General</a>
-          <a href="#" class="action-button">Oz Minimal</a>
-          <a href="#" class="action-button">Oz Wildcard</a>
-          <a href="#" class="action-button">Oz Professional</a>
-          <a href="#" class="action-button">Null</a>
+          <a href="#" class="action-button">ozSys General</a>
+          <a href="#" class="action-button">ozSys Professional</a>
+          <a href="#" class="action-button">ozSys Minimal</a>
+          <a href="#" class="action-button">ozSys Wildcard</a>
+          <a href="#" class="action-button">Sys Null</a>
       </div>
         <div class="tab-buttons">
             <button class="tab-button active" data-target="actionButtons1">ID</button>
