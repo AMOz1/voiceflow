@@ -6,9 +6,9 @@
   <link rel="icon" href="./favicon.ico" type="image/x-icon" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
   <style>
+<style>
     html,
     body {
       margin: 0;
@@ -113,80 +113,88 @@
             -webkit-font-smoothing: antialiased;
             text-rendering: optimizeLegibility;
         }
+
+        .action-button.active {
+        color: #FFD952;
+        }
    
 
     .chatbot-input {
       border-radius: 99px !important;
     }
+
+  </style>
   </style>
 </head>
 
 <body>
   <script src="index.js"></script>
 
-
   <div id="content">
     <flowise-fullchatbot></flowise-fullchatbot>
-</div>
-<div id="drawer">
-    <div class="drawer-content">
-        <div id="actionButtons1" class="action-buttons active">
-            <a href="#" class="action-button">ozGeneral</a>
-            <a href="#" class="action-button">ozProfessional</a>
-            <a href="#" class="action-button">ozToDo</a>
-            <a href="#" class="action-button">ozFacts</a>
-            <a href="#" class="action-button">Null</a>
-        </div>
-        <div id="actionButtons2" class="action-buttons">
-            <a href="#" class="action-button">Sonnet 3.5</a>
-            <a href="#" class="action-button">GPT-4</a>
-            <a href="#" class="action-button">Opus</a>
-            <a href="#" class="action-button">GPT-4o</a>
-            <a href="#" class="action-button">Wildcard</a>
-        </div>
-        <div id="actionButtons3" class="action-buttons">
-            <a href="#" class="action-button">( 07 )</a>
-            <a href="#" class="action-button">( 15 )</a>
-            <a href="#" class="action-button">( 30 )</a>
-            <a href="#" class="action-button">( 70 )</a>
-            <a href="#" class="action-button">( 90 )</a>
-        </div>
-        <div id="actionButtons4" class="action-buttons">
-          <a href="#" class="action-button">ozSys General</a>
-          <a href="#" class="action-button">ozSys Professional</a>
-          <a href="#" class="action-button">ozSys Minimal</a>
-          <a href="#" class="action-button">ozSys Wildcard</a>
-          <a href="#" class="action-button">Sys Null</a>
-      </div>
-        <div class="tab-buttons">
-            <button class="tab-button active" data-target="actionButtons1">ID</button>
-            <button class="tab-button" data-target="actionButtons2">MOD</button>
-            <button class="tab-button" data-target="actionButtons3">MEM</button>
-            <button class="tab-button" data-target="actionButtons4">SYS</button>
-        </div>
-    </div>
-</div>
-<button id="toggleButton">
-    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect x="9" y="18" width="22" height="4" rx="2" fill="#343739"/>
-        <circle cx="20" cy="20" r="5" fill="#343739"/>
-    </svg>
-</button>
+  </div>
 
+  <div id="drawer">
+    <div class="drawer-content">
+      <div id="actionButtons1" class="action-buttons active">
+        <a href="#" class="action-button" data-value="ozGeneral">ozGeneral</a>
+        <a href="#" class="action-button" data-value="ozProfessional">ozProfessional</a>
+        <a href="#" class="action-button" data-value="ozToDo">ozToDo</a>
+        <a href="#" class="action-button" data-value="ozFacts">ozFacts</a>
+        <a href="#" class="action-button" data-value="123456789">test</a>
+      </div>
+      <div id="actionButtons2" class="action-buttons">
+        <a href="#" class="action-button" data-value="anthropic/claude-3.5-sonnet">Sonnet 3.5</a>
+        <a href="#" class="action-button" data-value="openai/gpt-4">GPT-4</a>
+        <a href="#" class="action-button" data-value="anthropic/claude-3-opus">Opus</a>
+        <a href="#" class="action-button" data-value="openai/gpt-4o">GPT-4o</a>
+        <a href="#" class="action-button" data-value="alpindale/magnum-72b">Wildcard</a>
+
+      </div>
+      <div id="actionButtons3" class="action-buttons">
+        <a href="#" class="action-button" data-value=7>( 07 )</a>
+        <a href="#" class="action-button" data-value=15>( 15 )</a>
+        <a href="#" class="action-button" data-value=30>( 30 )</a>
+        <a href="#" class="action-button" data-value=70>( 70 )</a>
+        <a href="#" class="action-button" data-value=90>( 90 )</a>
+      </div>
+      <div id="actionButtons4" class="action-buttons">
+        <a href="#" class="action-button" data-value="">General</a>
+        <a href="#" class="action-button" data-value="Start every response with: Intresting question">Professional</a>
+        <a href="#" class="action-button" data-value="Start every response with: Hm.">Minimal</a>
+        <a href="#" class="action-button" data-value="Start every response with: Oh, I'm blushing.">Wildcard</a>
+        <a href="#" class="action-button" data-value="You are a helpful assistant">Helpful assistant</a>
+      </div>
+      <div class="tab-buttons">
+        <button class="tab-button active" data-target="actionButtons1">ID</button>
+        <button class="tab-button" data-target="actionButtons2">MOD</button>
+        <button class="tab-button" data-target="actionButtons3">MEM</button>
+        <button class="tab-button" data-target="actionButtons4">SYS</button>
+      </div>
+    </div>
+  </div>
+
+  <button id="toggleButton">
+    <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="9" y="18" width="22" height="4" rx="2" fill="#343739"/>
+      <circle cx="20" cy="20" r="5" fill="#343739"/>
+    </svg>
+  </button>
 
   <body style="margin: 0">
     <script type="module">
       import Chatbot from "https://cdn.jsdelivr.net/npm/flowise-embed/dist/web.js"
+      let chatflowConfig = {
+        sessionId: "ozGeneral",
+        modelName: "anthropic/claude-3.5-sonnet",
+        k: 7,
+        systemMessagePrompt: "",
+      };
+
       Chatbot.initFull({
         chatflowid: "d1178a44-3278-4e45-b9ea-924f3e4f7eb2",
         apiHost: "https://ozflowise.onrender.com",
-        chatflowConfig: {
-          sessionId: "",
-          modelName: "",
-          k: 7,
-          systemMessagePrompt: "",
-        },
-
+        chatflowConfig: chatflowConfig,
         theme: {
           // Header actually
           button: {
@@ -237,204 +245,229 @@
           },
         },
       });
-           // Drawer functionality
-           const content = document.getElementById('content');
-        const drawer = document.getElementById('drawer');
-        const toggleButton = document.getElementById('toggleButton');
-        const tabButtons = document.querySelectorAll('.tab-button');
-        const actionButtonSets = document.querySelectorAll('.action-buttons');
-        let isDrawerOpen = false;
 
-        toggleButton.addEventListener('click', () => {
-            const drawerHeight = '35vh';
-            if (isDrawerOpen) {
-                drawer.style.height = '0';
-                content.style.transform = 'translateY(0)';
-                toggleButton.style.transform = 'translateX(-50%)';
-            } else {
-                drawer.style.height = drawerHeight;
-                content.style.transform = `translateY(-${drawerHeight})`;
-                toggleButton.style.transform = `translateX(-50%) translateY(-${drawerHeight})`;
+      // Drawer functionality
+      const content = document.getElementById('content');
+      const drawer = document.getElementById('drawer');
+      const toggleButton = document.getElementById('toggleButton');
+      const tabButtons = document.querySelectorAll('.tab-button');
+      const actionButtonSets = document.querySelectorAll('.action-buttons');
+      let isDrawerOpen = false;
+
+      toggleButton.addEventListener('click', () => {
+        const drawerHeight = '35vh';
+        if (isDrawerOpen) {
+          drawer.style.height = '0';
+          content.style.transform = 'translateY(0)';
+          toggleButton.style.transform = 'translateX(-50%)';
+        } else {
+          drawer.style.height = drawerHeight;
+          content.style.transform = `translateY(-${drawerHeight})`;
+          toggleButton.style.transform = `translateX(-50%) translateY(-${drawerHeight})`;
+        }
+        isDrawerOpen = !isDrawerOpen;
+      });
+
+      // Tab functionality
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          tabButtons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+          
+          const targetId = button.getAttribute('data-target');
+          actionButtonSets.forEach(set => {
+            set.classList.remove('active');
+            if (set.id === targetId) {
+              set.classList.add('active');
             }
-            isDrawerOpen = !isDrawerOpen;
+          });
         });
+      });
 
-        // Tab functionality
-        tabButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                tabButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                
-                const targetId = button.getAttribute('data-target');
-                actionButtonSets.forEach(set => {
-                    set.classList.remove('active');
-                    if (set.id === targetId) {
-                        set.classList.add('active');
-                    }
-                });
-            });
-        });
+// Action button functionality
+const actionButtons = document.querySelectorAll('.action-button');
+actionButtons.forEach(button => {
+  button.addEventListener('click', (event) => {
+    event.preventDefault();
+    const value = button.getAttribute('data-value');
+    const tabId = button.closest('.action-buttons').id;
 
-        // Action button functionality (placeholder)
-        document.querySelectorAll('.action-button').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                console.log('Action button clicked:', button.textContent);
-                // Add your action logic here
-            });
-        });
+    // Remove the 'active' class from all buttons in the same tab
+    const tabButtons = button.closest('.action-buttons').querySelectorAll('.action-button');
+    tabButtons.forEach(btn => btn.classList.remove('active'));
+
+    // Add the 'active' class to the clicked button
+    button.classList.add('active');
+
+    switch (tabId) {
+      case 'actionButtons1':
+        chatflowConfig.sessionId = value;
+        break;
+      case 'actionButtons2':
+        chatflowConfig.modelName = value;
+        break;
+      case 'actionButtons3':
+        chatflowConfig.k = parseInt(value);
+        break;
+      case 'actionButtons4':
+        chatflowConfig.systemMessagePrompt = value;
+        break;
+    }
+
+    console.log('Updated chatflow config:', chatflowConfig);
+  });
+});
     </script>
 
-    <script>
-      function hideShadowDOMBadge() {
-        // Function to inject style into shadow root
-        function injectStyle(shadowRoot) {
-          if (shadowRoot) {
-            const style = document.createElement('style');
-            style.textContent = `
-            .chatbot-input {
-              border-radius: 99px !important;
-              border-style: none !important;
-            }
+<script>
+    function hideShadowDOMBadge() {
+      // Function to inject style into shadow root
+      function injectStyle(shadowRoot) {
+        if (shadowRoot) {
+          const style = document.createElement('style');
+          style.textContent = `
+          .chatbot-input {
+            border-radius: 99px !important;
+            border-style: none !important;
+          }
 
-            .chatbot-host-bubble {
-              font-family: 'Source Sans 3', sans-serif !important;
-              font-size: 17px !important;
-              font-weight: 400 !important;
-              line-height: 1.5rem !important;
-              padding-left: 8px !important;
-              -webkit-font-smoothing: antialiased;
-              text-rendering: optimizeLegibility;
-            }
+          .chatbot-host-bubble {
+            font-family: 'Source Sans 3', sans-serif !important;
+            font-size: 17px !important;
+            font-weight: 400 !important;
+            line-height: 1.5rem !important;
+            padding-left: 8px !important;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+          }
 
-            .chatbot-host-bubble b, 
-            .chatbot-host-bubble strong {
+          .chatbot-host-bubble b, 
+          .chatbot-host-bubble strong {
+          color: #B0C4FB !important;
+          font-weight: 600 !important;
+          }
+
+          .chatbot-guest-bubble {
+            font-family: 'Source Sans 3', sans-serif !important;
+            font-size: 17px !important;
+            font-weight: 400 !important;
+            padding-left: 16px !important;
+            line-height: 1.5rem !important;
+            padding-left: 8px !important;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+          }
+
+          .chatbot-guest-bubble b, 
+          .chatbot-guest-bubble strong {
             color: #B0C4FB !important;
             font-weight: 600 !important;
-            }
-
-            .chatbot-guest-bubble {
-              font-family: 'Source Sans 3', sans-serif !important;
-              font-size: 17px !important;
-              font-weight: 400 !important;
-              padding-left: 16px !important;
-              line-height: 1.5rem !important;
-              padding-left: 8px !important;
-              -webkit-font-smoothing: antialiased;
-              text-rendering: optimizeLegibility;
-            }
-
-            .chatbot-guest-bubble b, 
-            .chatbot-guest-bubble strong {
-              color: #B0C4FB !important;
-              font-weight: 600 !important;
-            }
-
-            .text-input {
-              font-family: 'Source Sans 3', sans-serif !important;
-              font-size: 17px !important;
-              font-weight: 400 !important;
-              padding-left: 50px !important;
-              margin-right: 20px !important;
-              -webkit-font-smoothing: antialiased;
-              text-rendering: optimizeLegibility;
-            }
-
-            .text-input::-webkit-scrollbar {
-              width: 14px; /* Adjust width as needed */
-            }
-
-            .text-input::-webkit-scrollbar-track {
-              background: #282828;
-            }
-
-            .text-input::-webkit-scrollbar-thumb {
-              background-color: rgba(255, 255, 255, 0.1);
-              border-radius: 10px; /* Adjust radius as needed */
-            }
-
-            .border-0 {
-              border: 1px solid #000000 !important;
-            }
-
-            .border-solid {
-              border: 1px solid #000000 !important;
-            }
-
-             .border-blueGray-200 {
-                border: 1px solid #000000 !important;
-            }
-
-            .flex.items-center.justify-between.p-5.border-b.border-solid.border-blueGray-200.rounded-t {
-              border: 1px solid #000000 !important;
-              }
-
-            .prose :where(code):not(:where([class~=not-prose],[class~=not-prose] *)) {
-              color: #B0C4FB;
-            }
-
-            .rounded-t {
-              border: 1px solid #000000 !important;
-            }
-
-
-            .pb-1 {
-              padding-bottom: 12px !important;
-            }
-
-
-            .block.p-2\.5.rounded-lg.border.focus\:ring-blue-500.focus\:border-blue-500.bg-transparent.flex-1.w-full.feedback-k-input.disabled\:opacity-50.disabled\:cursor-not-allowed.disabled\:brightness-100.font-normal {
-              border: 0px solid rgb(238, 238, 238) !important;
-              background-color: #282828 !important;
-
-            }
           }
-            `;
-            shadowRoot.appendChild(style);
+
+          .text-input {
+            font-family: 'Source Sans 3', sans-serif !important;
+            font-size: 17px !important;
+            font-weight: 400 !important;
+            padding-left: 50px !important;
+            margin-right: 20px !important;
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+          }
+
+          .text-input::-webkit-scrollbar {
+            width: 14px; /* Adjust width as needed */
+          }
+
+          .text-input::-webkit-scrollbar-track {
+            background: #282828;
+          }
+
+          .text-input::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px; /* Adjust radius as needed */
+          }
+
+          .border-0 {
+            border: 1px solid #000000 !important;
+          }
+
+          .border-solid {
+            border: 1px solid #000000 !important;
+          }
+
+           .border-blueGray-200 {
+              border: 1px solid #000000 !important;
+          }
+
+          .flex.items-center.justify-between.p-5.border-b.border-solid.border-blueGray-200.rounded-t {
+            border: 1px solid #000000 !important;
+            }
+
+          .prose :where(code):not(:where([class~=not-prose],[class~=not-prose] *)) {
+            color: #B0C4FB;
+          }
+
+          .rounded-t {
+            border: 1px solid #000000 !important;
+          }
+
+
+          .pb-1 {
+            padding-bottom: 12px !important;
+          }
+
+
+          .block.p-2\.5.rounded-lg.border.focus\:ring-blue-500.focus\:border-blue-500.bg-transparent.flex-1.w-full.feedback-k-input.disabled\:opacity-50.disabled\:cursor-not-allowed.disabled\:brightness-100.font-normal {
+            border: 0px solid rgb(238, 238, 238) !important;
+            background-color: #282828 !important;
+
           }
         }
-
-        // Function to find and modify shadow roots
-        function findAndModifyShadowRoots(node) {
-          // Check if the node itself has a shadow root
-          if (node.shadowRoot) {
-            injectStyle(node.shadowRoot);
-          }
-
-          // Check child elements recursively
-          node.childNodes.forEach(child => {
-            if (child.nodeType === Node.ELEMENT_NODE) {
-              findAndModifyShadowRoots(child);
-            }
-          });
+          `;
+          shadowRoot.appendChild(style);
         }
-
-        // Start the search from the body
-        findAndModifyShadowRoots(document.body);
-
-        // Set up a MutationObserver to watch for new elements
-        const observer = new MutationObserver(mutations => {
-          mutations.forEach(mutation => {
-            if (mutation.type === 'childList') {
-              mutation.addedNodes.forEach(node => {
-                if (node.nodeType === Node.ELEMENT_NODE) {
-                  findAndModifyShadowRoots(node);
-                }
-              });
-            }
-          });
-        });
-
-        // Start observing the document with the configured parameters
-        observer.observe(document.body, { childList: true, subtree: true });
       }
 
-      // Run the function after a short delay and periodically
-      setTimeout(hideShadowDOMBadge, 100);
-      setInterval(hideShadowDOMBadge, 2000);
-    </script>
+      // Function to find and modify shadow roots
+      function findAndModifyShadowRoots(node) {
+        // Check if the node itself has a shadow root
+        if (node.shadowRoot) {
+          injectStyle(node.shadowRoot);
+        }
+
+        // Check child elements recursively
+        node.childNodes.forEach(child => {
+          if (child.nodeType === Node.ELEMENT_NODE) {
+            findAndModifyShadowRoots(child);
+          }
+        });
+      }
+
+      // Start the search from the body
+      findAndModifyShadowRoots(document.body);
+
+      // Set up a MutationObserver to watch for new elements
+      const observer = new MutationObserver(mutations => {
+        mutations.forEach(mutation => {
+          if (mutation.type === 'childList') {
+            mutation.addedNodes.forEach(node => {
+              if (node.nodeType === Node.ELEMENT_NODE) {
+                findAndModifyShadowRoots(node);
+              }
+            });
+          }
+        });
+      });
+
+      // Start observing the document with the configured parameters
+      observer.observe(document.body, { childList: true, subtree: true });
+    }
+
+    // Run the function after a short delay and periodically
+    setTimeout(hideShadowDOMBadge, 100);
+    setInterval(hideShadowDOMBadge, 2000);
+  </script>
 
 
   </body>
-
-  </html>
+</html>
